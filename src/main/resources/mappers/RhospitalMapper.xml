@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gson.wangjunchi.model.mappers.RhospitalMapper">
+<!-- 查询入院记录-->
+    <resultMap id="hospital" type="cn.gson.wangjunchi.model.posos.Rhospital">
+        <id column="paia_id" property="paiaId"/>
+        <result column="hz_name" property="hzName"/>
+        <result column="hz_xb" property="hzXb"/>
+        <result column="hz_nl" property="hzNl"/>
+        <result column="hz_sb" property="hzSb"/>
+        <result column="hz_gzdw" property="hzGzdw"/>
+        <result column="hz_lxdh" property="hzLxdh"/>
+        <result column="hz_jtzz" property="hzJtzz"/>
+        <result column="hz_zd" property="hzZd"/>
+        <result column="hz_zyh" property="hzZyh"/>
+            <result column="hz_fsjg" property="hzFsjg"/>
+        <result column="hz_csr" property="hzCsr"/>
+        <result column="csr_gx" property="csrGx"/>
+        <result column="tbr" property="tbr"/>
+        <result column="hz_qm" property="hzQm"/>
+            <result column="rysj" property="rysj"/>
+    </resultMap>
+<select id="aeleRhospital" resultMap="hospital">
+    select * from rhospital
+    <where>
+        <if test="name!='' and name !=null">
+            hz_name = #{name}
+        </if>
+    </where>
+</select>
+<!--新增入院记录-->
+<insert id="addRhospital">
+    insert into rhospital VALUES(#{paiaId},#{hzName},#{hzXb},#{hzNl},#{hzSb},#{hzGzdw},#{hzLxdh},#{hzJtzz},#{hzZd},#{hzZyh},#{hzFsjg},#{hzCsr},#{csrGx},#{tbr},#{hzQm},#{rysj})
+</insert>
+<!-- 查询关系 -->
+    <resultMap id="relation" type="cn.gson.wangjunchi.model.posos.Relation">
+        <id property="gxId" column="gx_id"/>
+        <result property="gxName" column="gx_name"/>
+     </resultMap>
+
+<select id="seleRelation" resultMap="relation">
+    select * from relation
+</select>
+</mapper>
