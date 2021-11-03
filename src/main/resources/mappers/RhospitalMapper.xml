@@ -14,7 +14,7 @@
         <result column="hz_jtzz" property="hzJtzz"/>
         <result column="hz_zd" property="hzZd"/>
         <result column="hz_zyh" property="hzZyh"/>
-            <result column="hz_fsjg" property="hzFsjg"/>
+        <result column="hz_fsjg" property="hzFsjg"/>
         <result column="hz_csr" property="hzCsr"/>
         <result column="csr_gx" property="csrGx"/>
         <result column="tbr" property="tbr"/>
