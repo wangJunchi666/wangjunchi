@@ -35,7 +35,7 @@ public class RhospitalControllere {
         return rhospitalService.addRhospital(rhospital1);
     };
 
-    //查询入院登记
+    //查询入院
     @RequestMapping("aeleRhospital")
     public List<Rhospital> aeleRhospital(String name){
         return rhospitalService.aeleRhospital(name);
